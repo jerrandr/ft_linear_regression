@@ -1,10 +1,14 @@
 import csv
-
+import sys
 miles, prices = [], []
-with open('data.csv', 'r', encoding='utf-8') as data:
-    for i in csv.DictReader(data):
-        miles.append(int(i['km']))
-        prices.append(int(i['price']))
+try:
+    with open('data.csv', 'r', encoding='utf-8') as data:
+        for i in csv.DictReader(data):
+            miles.append(int(i['km']))
+            prices.append(int(i['price']))
+except (FileNotFoundError, PermissionError):
+    print("There was an error on the file or file doesn't exist")
+    sys.exit()
 
 d = []
 with open('.train_output', 'r', encoding='utf-8') as file:
