@@ -8,5 +8,8 @@ except (FileNotFoundError, PermissionError):
     print("PREDICTION: 0")
     sys.exit()
 mile = float(input("input the mileage: "))
-a, b = float(d[0].split(":")[1]), float(d[1].split(":")[1])
-print("PREDICTION: ", f'{a + b * mile}')
+if mile < 0:
+	print("the mileage must be a positive number")
+else:
+	a, b = float(d[0].split(":")[1]), float(d[1].split(":")[1])
+	print("PREDICTION: ", f'{a + b * mile}')
