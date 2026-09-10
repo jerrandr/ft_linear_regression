@@ -12,10 +12,6 @@ except (FileNotFoundError, PermissionError, ValueError, TypeError, KeyError):
 	print("There was an error on the file or file doesn't exist")
 	sys.exit()
 
-# if len(miles) != len(set(miles)) or len(prices) != len(set(prices)):
-# 	print("There are double information in miles or prices")
-# 	sys.exit()
-
 if max(miles) == min(miles):
 	print("All the miles are the same, can't do a linear regression")
 	sys.exit()
